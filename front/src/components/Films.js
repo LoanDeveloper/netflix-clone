@@ -9,13 +9,8 @@ function Films() {
   useEffect(() => {
     const fetchFilms = async () => {
       try {
-        const response = await axios.get('https://api.themoviedb.org/3/movie/popular', {
-          params: {
-            api_key: '8b57178a015d25ef9d928ebbd11596f5',
-            language: 'fr-FR'
-          }
-        });
-        setFilms(response.data.results);
+        const response = await axios.get('http://localhost:8080/api/videos/movies');
+        setFilms(response.data);
       } catch (error) {
         console.error("Erreur lors de la récupération des films:", error);
       }
@@ -27,7 +22,7 @@ function Films() {
   return (
     <div className="home">
       <Navbar />
-      <MediaGrid items={films} title="Films Populaires" />
+      <MediaGrid items={films} title="Films" />
     </div>
   );
 }

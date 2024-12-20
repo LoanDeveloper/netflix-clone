@@ -9,13 +9,8 @@ function Series() {
   useEffect(() => {
     const fetchSeries = async () => {
       try {
-        const response = await axios.get('https://api.themoviedb.org/3/tv/popular', {
-          params: {
-            api_key: '8b57178a015d25ef9d928ebbd11596f5',
-            language: 'fr-FR'
-          }
-        });
-        setSeries(response.data.results);
+        const response = await axios.get('http://localhost:8080/api/videos/series');
+        setSeries(response.data);
       } catch (error) {
         console.error("Erreur lors de la récupération des séries:", error);
       }
@@ -27,7 +22,7 @@ function Series() {
   return (
     <div className="home">
       <Navbar />
-      <MediaGrid items={series} title="Séries Populaires" />
+      <MediaGrid items={series} title="Séries" />
     </div>
   );
 }

@@ -8,11 +8,11 @@ function MediaGrid({ items, title }) {
         {items.map(item => (
           <div key={item.id} className="film__card">
             <img 
-              src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} 
-              alt={item.title || item.name}
+              src={item.thumbnailUrl} 
+              alt={item.title}
               className="film__poster"
             />
-            <h3 className="film__title">{item.title || item.name}</h3>
+            <h3 className="film__title">{item.title}</h3>
           </div>
         ))}
       </section>

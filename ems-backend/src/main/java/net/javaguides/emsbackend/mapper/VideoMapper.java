@@ -15,7 +15,8 @@ public class VideoMapper {
                 video.getDuration(),
                 video.getViews(),
                 video.getPublishedDate(),
-                video.getCreatedAt()
+                video.getCreatedAt(),
+                video.getType()
                 );
     }
 
@@ -29,7 +30,8 @@ public class VideoMapper {
                 videoDto.getDuration(),
                 videoDto.getViews(),
                 videoDto.getReleaseDate(),
-                videoDto.getCreatedAt()
+                videoDto.getCreatedAt(),
+                videoDto.getType()
         );
     }
 }

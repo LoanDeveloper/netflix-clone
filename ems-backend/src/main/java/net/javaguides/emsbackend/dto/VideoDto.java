@@ -13,13 +13,15 @@ public class VideoDto {
     private Integer views;
     private LocalDate releaseDate;
     private LocalDateTime createdAt;
+    private String type;
+    private LocalDate publishedDate;
 
     // Constructeurs
     public VideoDto() {}
 
     public VideoDto(int id, String title, String description, String thumbnailUrl, 
                    String videoUrl, Integer duration, Integer views, 
-                   LocalDate releaseDate, LocalDateTime createdAt) {
+                   LocalDate releaseDate, LocalDateTime createdAt, String type) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -29,6 +31,7 @@ public class VideoDto {
         this.views = views;
         this.releaseDate = releaseDate;
         this.createdAt = createdAt;
+        this.type = type;
     }
 
     // Getters et Setters
@@ -102,5 +105,21 @@ public class VideoDto {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public LocalDate getPublishedDate() {
+        return publishedDate;
+    }
+
+    public void setPublishedDate(LocalDate publishedDate) {
+        this.publishedDate = publishedDate;
     }
 }

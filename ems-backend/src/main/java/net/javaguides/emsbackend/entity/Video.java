@@ -14,13 +14,13 @@ public class Video {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "description", nullable = false, length = 255)
+    @Column(name = "description", length = 1000)
     private String description;
 
-    @Column(name = "thumbnailUrl", length = 255)
+    @Column(name = "thumbnail_url")
     private String thumbnailUrl;
 
-    @Column(name = "video_url", nullable = false, length = 255)
+    @Column(name = "video_url", nullable = false)
     private String videoUrl;
 
     @Column(name = "duration")
@@ -35,12 +35,15 @@ public class Video {
     @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    @Column(name = "type")
+    private String type;
+
     // Constructeurs
     public Video() {}
 
     public Video(int id, String title, String description, String thumbnailUrl, 
                 String videoUrl, Integer duration, Integer views, 
-                LocalDate publishedDate, LocalDateTime createdAt) {
+                LocalDate publishedDate, LocalDateTime createdAt, String type) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -50,6 +53,7 @@ public class Video {
         this.views = views;
         this.publishedDate = publishedDate;
         this.createdAt = createdAt;
+        this.type = type;
     }
 
     // Getters et Setters
@@ -123,5 +127,13 @@ public class Video {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
