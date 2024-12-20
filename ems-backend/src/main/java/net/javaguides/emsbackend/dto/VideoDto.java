@@ -1,17 +1,8 @@
 package net.javaguides.emsbackend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class VideoDto {
     private int id;
     private String title;
@@ -23,7 +14,12 @@ public class VideoDto {
     private LocalDate releaseDate;
     private LocalDateTime createdAt;
 
-    public VideoDto(int id, String title, String description, String thumbnailUrl, String videoUrl, Integer duration, Integer views, LocalDate releaseDate, LocalDateTime createdAt) {
+    // Constructeurs
+    public VideoDto() {}
+
+    public VideoDto(int id, String title, String description, String thumbnailUrl, 
+                   String videoUrl, Integer duration, Integer views, 
+                   LocalDate releaseDate, LocalDateTime createdAt) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -35,6 +31,7 @@ public class VideoDto {
         this.createdAt = createdAt;
     }
 
+    // Getters et Setters
     public int getId() {
         return id;
     }

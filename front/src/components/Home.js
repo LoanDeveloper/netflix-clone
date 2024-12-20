@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
+import MediaGrid from './MediaGrid';
 
 function Home() {
   const [films, setFilms] = useState([]);
@@ -25,31 +26,8 @@ function Home() {
 
   return (
     <div className="home">
-      <header className="home__header">
-        <img src="./img/Netflix_2015_logo.svg.png" className="home__netflixLogo" alt="logo"></img>
-        <nav className="home__nav">
-          <ul className="home__nav__list">
-            <li className="home__nav__item"><Link to="/home" className="home__nav__link">Accueil</Link></li>
-            <li className="home__nav__item"><Link to="/series" className="home__nav__link">Séries TV</Link></li>
-            <li className="home__nav__item"><Link to="/films" className="home__nav__link">Films</Link></li>
-            <li className="home__nav__item">Nouveautés</li>
-            <li className="home__nav__item">Ma liste</li>
-          </ul>
-        </nav>
-      </header>
-      <h2 className="home__title">Tendances</h2>
-      <section className="home__films">
-        {films.map(film => (
-          <div key={film.id} className="film__card">
-            <img 
-              src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} 
-              alt={film.title || film.name}
-              className="film__poster"
-            />
-            <h3 className="film__title">{film.title || film.name}</h3>
-          </div>
-        ))}
-      </section>
+      <Navbar />
+      <MediaGrid items={films} title="Tendances" />
     </div>
   );
 }

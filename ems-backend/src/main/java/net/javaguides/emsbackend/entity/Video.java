@@ -1,18 +1,9 @@
 package net.javaguides.emsbackend.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "videos")
 public class Video {
@@ -44,7 +35,12 @@ public class Video {
     @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    public Video(int id, String title, String description, String thumbnailUrl, String videoUrl, Integer duration, Integer views, LocalDate publishedDate, LocalDateTime createdAt) {
+    // Constructeurs
+    public Video() {}
+
+    public Video(int id, String title, String description, String thumbnailUrl, 
+                String videoUrl, Integer duration, Integer views, 
+                LocalDate publishedDate, LocalDateTime createdAt) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -56,6 +52,7 @@ public class Video {
         this.createdAt = createdAt;
     }
 
+    // Getters et Setters
     public int getId() {
         return id;
     }

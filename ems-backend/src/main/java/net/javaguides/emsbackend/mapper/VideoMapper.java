@@ -8,8 +8,8 @@ public class VideoMapper {
     public static VideoDto mapToVideoDto(Video video) {
         return new VideoDto(
                 video.getId(),
-                video.getDescription(),
                 video.getTitle(),
+                video.getDescription(),
                 video.getThumbnailUrl(),
                 video.getVideoUrl(),
                 video.getDuration(),
@@ -22,8 +22,8 @@ public class VideoMapper {
     public static Video mapToVideo(VideoDto videoDto) {
         return new Video(
                 videoDto.getId(),
-                videoDto.getDescription(),
                 videoDto.getTitle(),
+                videoDto.getDescription(),
                 videoDto.getThumbnailUrl(),
                 videoDto.getVideoUrl(),
                 videoDto.getDuration(),
