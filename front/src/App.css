@@ -1,0 +1,119 @@
+body {
+  background-color: black;
+}
+
+/* PROFILS PAGE */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.App__header {
+  display: flex;
+  height: auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.netflixLogo {
+  width: 15vw;
+  height: auto;
+  object-fit: contain;
+}
+
+.app__title {
+  color: white;
+  font-size: 3rem;
+}
+
+/* PROFIL */
+
+.profil__container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profil__img {
+  width: 10vw;
+  height: auto;
+  object-fit: contain;
+}
+
+.profil__name {
+  color: white;
+}
+
+/* HOME */
+
+.home__netflixLogo {
+  width: 10vw;
+  height: auto;
+  object-fit: contain;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: 1rem 2rem;
+}
+
+.home__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.home__nav__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.home__nav__link {
+  color: white;
+  text-decoration: none;
+}
+
+.home__films {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.film__card {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.film__card:hover {
+  transform: scale(1.05);
+}
+
+.film__poster {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.film__title {
+  color: white;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
